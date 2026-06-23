@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobTrack Pro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- step-1 header creation -->
+
+
+    <header>
+        <h1>JobTrack Pro</h1>
+        <p>Track your job applications and never miss an opportunity</p>
+    </header>
+
+    <button id="theme-toggle">
+        🌙
+    </button>
+
+
+    <!-- step-2 Dashboard Cards -->
+    <main>
+
+        <section id="dashboard">
+            <div class="stat-card">
+                <h3>Total Applications</h3>
+                <span class="stat-number" id="total-count">0</span>
+            </div>
+            <div class="stat-card">
+                <h3>Applied</h3>
+                <span class="stat-number" id="applied-count">0</span>
+            </div>
+            <div class="stat-card">
+                <h3>Interviews</h3>
+                <span class="stat-number" id="interview-count">0</span>
+            </div>
+            <div class="stat-card">
+                <h3>Offers</h3>
+                <span class="stat-number" id="offer-count">0</span>
+            </div>
+            <div class="stat-card">
+                <h3>Rejected</h3>
+                <span class="stat-number" id="rejected-count">0</span>
+            </div>
+            <div class="stat-card">
+                <h3>Success Rate</h3>
+                <span class="stat-number" id="success-rate">0%</span>
+            </div>
+        </section>
+
+        <div class="toolbar">
+
+            <div id="last-updated">Last Updated: Never</div>
+
+            <button id="export-btn">Export Data</button>
+
+            <button id="csv-export-btn">Export CSV</button>
+
+            <input type="file" id="import-file" accept=".json">
+
+        </div>
+        
+
+        <!-- step-4 Search Section -->
+
+        <section id="search-section">
+            <h2>Search Applications</h2>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search by company or role...">
+            </div>
+        </section>
+
+
+        <!-- step-5 Filter Section -->
+
+        <section id="filter-section">
+            <h2>Filter Applications</h2>
+            <div class="filter-bar">
+                <label for="filter-status">Filter by Status</label>
+                <select id="filter-status">
+                    <option value="All">All</option>
+                    <option value="Applied">Applied</option>
+                    <option value="Screening">Screening</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Offer">Offer</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+            </div>
+        </section>
+
+
+        <!-- step-3 Application Form -->
+
+        <section id="add-application">
+            <h2>Add New Application</h2>
+            <form id="application-form">
+
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" placeholder="e.g. Google" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Job Role</label>
+                    <input type="text" id="role" placeholder="e.g. Frontend Developer" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="e.g. Hyderabad, India">
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Applied Date</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status">
+                        <option value="Applied">Applied</option>
+                        <option value="Screening">Screening</option>
+                        <option value="Interview">Interview</option>
+                        <option value="Offer">Offer</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                    <label for="notes">Notes</label>
+                    <textarea id="notes"></textarea>
+                </div>
+
+                <button type="submit" id="submit-btn">Add Application</button>
+
+            </form>
+        </section>
+
+        <!-- step-6 Applications Table -->
+
+        <section id="applications-section">
+            <h2>My Applications</h2>
+            <table id="applications-table">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Role</th>
+                        <th>Location</th>
+                        <th>Applied Date</th>
+                        <th>Status</th>
+                        <th>Notes</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="applications-body">
+                    <!-- rows will be added here by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+        
+
+    </main>
+
+    <script src="script.js"></script>
+    <div id="toast"></div>
+</body>
+</html>
